@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard SMAN 1 Singaparna</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background-color: #e6f0dc;
+        }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #cfe0c3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        }
+        .sidebar img {
+            margin-top: 20px;
+            width: 100px;
+            height: auto;
+        }
+        .menu {
+            margin-top: 30px;
+            width: 100%;
+        }
+        .menu button {
+            width: 90%;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f5;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+        }
+        .menu button:hover {
+            background-color: #e0e0e0;
+        }
+        .exit {
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+        .exit button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            background-color: #f5f5f5;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+            font-weight: bold;
+        }
+
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        .header img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+        }
+        h1 {
+            font-size: 28px;
+            color: #3a5a40;
+        }
+        .dashboard-title {
+            margin-top: 20px;
+        }
+
+        .main-content {
+            display: flex;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .piechart, .calendar, .summary {
+            background-color: #cfe0c3;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 8px rgba(0,0,0,0.3);
+        }
+        .piechart {
+            flex: 1;
+            text-align: center;
+        }
+        .calendar {
+            flex: 0.7;
+            text-align: center;
+        }
+        .summary {
+            margin-top: 20px;
+            text-align: left;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <img src="logo.png" alt="Logo">
+    <div class="menu">
+        <button><a href="akunkepsek.html">Dashboard</a></button>
+        <button><a href="hasilkepsek.html">Hasil Seleksi</a></button>
+        <button><a href="hasilakhir.html">Hasil Akhir</a></button>
+    </div>
+    <div class="exit">
+        <button><a href="loginadminkepsek.html">EXIT</a></button>
+    </div>
+</div>
+
+<div class="content">
+    <div class="header">
+        <img src="sman.jpg" alt="Header Sekolah">
+    </div>
+    <div class="dashboard-title">
+        <h1>Dashboard</h1>
+        <p>Selamat Datang Kepala Sekolah</p>
+    </div>
+    <div class="main-content">
+        <div class="piechart">
+            <h2>Total Pendaftar</h2>
+            <img src="piechart.png" alt="Pie Chart">
+        </div>
+        <div class="calendar">
+            <h2>Kalender</h2>
+            <img src="kalender.png" alt="Kalender">
+        </div>
+    </div>
+    <div class="summary">
+        <h2>Total Pendaftar</h2>
+        <p>Jumlah Pendaftar Perempuan : 35 Orang</p>
+        <p>Jumlah Pendaftar Laki Laki : 55 Orang</p>
+        <p><a href="hasilkepsek.html">View All</a></p>
+    </div>
+</div>
+
+</body>
+</html>

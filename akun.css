@@ -1,0 +1,162 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #e8f0e6;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #b5d2af;
+  padding: 20px 10px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar img.logo {
+  width: 100px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar nav li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #e8f0e6;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar nav li:hover {
+  background-color: #a6c6a2;
+}
+
+.exit-btn {
+  margin-top: auto;
+  padding: 10px 15px;
+  background-color: #e8f0e6;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.exit-btn:hover {
+  background-color: #a6c6a2;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+}
+
+.welcome {
+  grid-column: span 2;
+  background: linear-gradient(to right, #a6c6a2, #c0d4b7);
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px #999;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.avatar {
+  height: 120px;
+  margin-right: 20px;
+}
+
+.welcome-text h2 {
+  margin: 0;
+  color: #3a573b;
+}
+
+.nama {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.deco {
+  margin-left: auto;
+  height: 50px;
+}
+
+.info {
+  background-color: transparent;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.info-card {
+  background-color: #c2e0b4;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px #aaa;
+  align-items: center;
+}
+
+.info-card img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calendar, .sales {
+  background-color: #c2e0b4;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px #aaa;
+}
+
+.calendar table {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+.calendar td, .calendar th {
+  padding: 5px;
+  background-color: #a6c6a2;
+  border-radius: 5px;
+}
+
+.calendar .highlight {
+  background-color: #3a573b;
+  color: white;
+}
+
+.sales img {
+  width: 100%;
+  margin-top: 10px;
+}

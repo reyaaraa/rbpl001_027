@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Akhir Seleksi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    /* Gaya dasar untuk meningkatkan keterbacaan */
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #f0f5ea;
+      font-family: 'Inika', serif;
+      color: #4E6D41;
+    }
+    
+    .container {
+      position: relative;
+      width: 1780px;
+      height: 1197px;
+      background: rgba(220, 229, 204, 0.88);
+      overflow: hidden;
+      border-radius: 25px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Komentar untuk setiap bagian utama */
+    .header-section {
+      position: absolute;
+      left: 367px;
+      top: 44px;
+      width: 427px;
+      height: 139px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #4E6D41;
+      font-size: 40px;
+      font-weight: 700;
+    }
+    
+    .welcome-message {
+      position: absolute;
+      left: 368px;
+      top: 126px;
+      width: 426px;
+      height: 33px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #686868;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    
+    /* Kartu siswa */
+    .student-card {
+      position: absolute;
+      width: 392px;
+      height: 185px;
+      background: #B4D1AC;
+      border-radius: 25px;
+      box-shadow: 6px 6px 10px 5px rgba(86.64, 130.93, 45.20, 0.25);
+    }
+    
+    .card-icon {
+      position: absolute;
+      width: 104px;
+      height: 97px;
+      background: #4C7640;
+      border-radius: 25px;
+    }
+    
+    .student-name {
+      position: absolute;
+      width: 99px;
+      height: 33px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #686868;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    
+    .student-id {
+      position: absolute;
+      width: 99px;
+      height: 33px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #686868;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    
+    .learn-more-btn {
+      position: absolute;
+      width: 105px;
+      height: 36px;
+      background: #90AA89;
+      border-radius: 5px;
+    }
+    
+    .learn-more-text {
+      position: absolute;
+      width: 90px;
+      height: 14px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #FEFEFE;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    
+    .student-photo {
+      position: absolute;
+      width: 88px;
+      height: 88px;
+    }
+    
+    /* Sidebar */
+    .sidebar {
+      position: absolute;
+      width: 272px;
+      height: 1196px;
+      background: #B4D1AC;
+      border-radius: 25px;
+      left: 0;
+      top: 0;
+    }
+    
+    .menu-item {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: black;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    
+    .menu-highlight {
+      position: absolute;
+      background: #DCE5CC;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 100px;
+    }
+    
+    .upload-btn {
+      position: absolute;
+      background: #90AA89;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .upload-text {
+      position: absolute;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #FEFEFE;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    
+    .divider {
+      position: absolute;
+      outline: 3px #4E6D41 solid;
+      outline-offset: -1.50px;
+    }
+    
+    /* Notifikasi Pop-up */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 1000;
+      font-family: 'Inika', serif;
+      font-weight: 700;
+      animation: slideIn 0.5s forwards, fadeOut 0.5s forwards 2.5s;
+    }
+    
+    @keyframes slideIn {
+      from {right: -300px; opacity: 0;}
+      to {right: 20px; opacity: 1;}
+    }
+    
+    @keyframes fadeOut {
+      from {opacity: 1;}
+      to {opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Header Section -->
+  <div class="header-section">Hasil Akhir</div>
+  <div class="welcome-message">Selamat Datang, XXXX</div>
+  
+  <!-- Kartu Siswa Baris 1 -->
+  <div class="student-card" style="left: 367px; top: 192px;"></div>
+  <div class="card-icon" style="left: 383px; top: 206px;"></div>
+  <div class="student-name" style="left: 507px; top: 222px;">NABILA MARWAH</div>
+  <div class="student-id" style="left: 507px; top: 239px;">0085741</div>
+  <div class="learn-more-btn" style="left: 640px; top: 330px;"></div>
+  <div class="learn-more-text" style="left: 648px; top: 341px;"><a href="detail_siswa.html">LEARN MORE →</a></div>
+  <img class="student-photo" style="left: 385px; top: 211px;" src="foto.png" />
+  
+  <div class="student-card" style="left: 367px; top: 419px;"></div>
+  <div class="card-icon" style="left: 383px; top: 433px;"></div>
+  <div class="student-name" style="left: 507px; top: 449px;">NABILA MARWAH</div>
+  <div class="student-id" style="left: 507px; top: 466px;">0085741</div>
+  <div class="learn-more-btn" style="left: 640px; top: 557px;"></div>
+  <div class="learn-more-text" style="left: 648px; top: 568px;"><a href="detail_siswa.html">LEARN MORE →</a></div>
+  <img class="student-photo" style="left: 385px; top: 438px;" src="foto.png" />
+  
+  <div class="student-card" style="left: 367px; top: 646px;"></div>
+  <div class="card-icon" style="left: 383px; top: 660px;"></div>
+  <div class="student-name" style="left: 507px; top: 676px;">NABILA MARWAH</div>
+  <div class="student-id" style="left: 507px; top: 693px;">0085741</div>
+  <div class="learn-more-btn" style="left: 640px; top: 784px;"></div>
+  <div class="learn-more-text" style="left: 648px; top: 795px;"><a href="detail_siswa.html">LEARN MORE →</a></div>
+  <img class="student-photo" style="left: 385px; top: 665px;" src="foto.png" />
+  
+  
+  <!-- Kartu Siswa Baris 2 -->
+  <div class="student-card" style="left: 839px; top: 192px;"></div>
+  <div class="card-icon" style="left: 855px; top: 206px;"></div>
+  <div class="student-name" style="left: 979px; top: 222px;">NABILA MARWAH</div>
+  <div class="student-id" style="left: 979px; top: 239px;">0085741</div>
+  <div class="learn-more-btn" style="left: 1112px; top: 330px;"></div>
+  <div class="learn-more-text" style="left: 1120px; top: 341px;"><a href="detail_siswa.html">LEARN MORE →</a></div>
+  <img class="student-photo" style="left: 857px; top: 211px;" src="foto.png" />
+  
+  <div class="student-card" style="left: 839px; top: 419px;"></div>
+  <div class="card-icon" style="left: 855px; top: 433px;"></div>
+  <div class="student-name" style="left: 979px; top: 449px;">NABILA MARWAH</div>
+  <div class="student-id" style="left: 979px; top: 466px;">0085741</div>
+  <div class="learn-more-btn" style="left: 1112px; top: 557px;"></div>
+  <div class="learn-more-text" style="left: 1120px; top: 568px;"><a href="detail_siswa.html">LEARN MORE →</a></div>
+  <img class="student-photo" style="left: 857px; top: 438px;" src="foto.png" />
+  
+  <div class="student-card" style="left: 839px; top: 646px;"></div>
+  <div class="card-icon" style="left: 855px; top: 660px;"></div>
+  <div class="student-name" style="left: 979px; top: 676px;">NABILA MARWAH</div>
+  <div class="student-id" style="left: 979px; top: 693px;">0085741</div>
+  <div class="learn-more-btn" style="left: 1112px; top: 784px;"></div>
+  <div class="learn-more-text" style="left: 1120px; top: 795px;"><a href="detail_siswa.html">LEARN MORE →</a></div>
+  <img class="student-photo" style="left: 857px; top: 665px;" src="foto.png" />
+  
+  <!-- Kartu Siswa Baris 3 -->
+  <div class="student-card" style="left: 1324px; top: 192px;"></div>
+  <div class="card-icon" style="left: 1340px; top: 206px;"></div>
+  <div class="student-name" style="left: 1464px; top: 222px;">NABILA MARWAH</div>
+  <div class="student-id" style="left: 1464px; top: 239px;">0085741</div>
+  <div class="learn-more-btn" style="left: 1597px; top: 330px;"></div>
+  <div class="learn-more-text" style="left: 1605px; top: 341px;"><a href="detail_siswa.html">LEARN MORE →</a></div>
+  <img class="student-photo" style="left: 1342px; top: 211px;" src="foto.png" />
+  
+  <div class="student-card" style="left: 1324px; top: 419px;"></div>
+  <div class="card-icon" style="left: 1340px; top: 433px;"></div>
+  <div class="student-name" style="left: 1464px; top: 449px;">NABILA MARWAH</div>
+  <div class="student-id" style="left: 1464px; top: 466px;">0085741</div>
+  <div class="learn-more-btn" style="left: 1597px; top: 557px;"></div>
+  <div class="learn-more-text" style="left: 1605px; top: 568px;"><a href="detail_siswa.html">LEARN MORE →</a></div>
+  <img class="student-photo" style="left: 1342px; top: 438px;" src="foto.png" />
+  
+ 
+  
+  <!-- Tombol Unggah -->
+  <div class="upload-btn" style="width: 112px; height: 39px; left: 1572px; top: 1093px;" id="uploadButton"></div>
+  <div class="upload-text" style="width: 90px; height: 14px; left: 1583px; top: 1106px;">Unggah</div>
+  
+  <!-- Sidebar -->
+  <div class="sidebar"></div>
+  
+  <!-- Menu Sidebar -->
+  <div class="menu-highlight" style="width: 212px; height: 55px; left: 34px; top: 397px;"></div>
+  
+  <div class="menu-item" style="width: 124px; height: 25px; left: 112px; top: 345px;">
+    <a href="hasilkepsek.html">Hasil Seleksi</a>
+  </div>
+  <img style="width: 88px; height: 55px; left: 19px; top: 326px; position: absolute; border-radius: 25px" src="data.png" />
+  
+  <div class="menu-item" style="width: 104px; height: 25px; left: 109px; top: 259px;">
+    <a href="akunkepsek.html">Dashboard</a>
+  </div>
+  <img style="width: 60px; height: 60px; left: 29px; top: 241px; position: absolute" src="akun.png" />
+  
+  <div class="menu-item" style="width: 124px; height: 25px; left: 112px; top: 412px;">
+    <a href="hasilakhir.html">Hasil Akhir</a>
+  </div>
+  <img style="width: 40px; height: 40px; left: 44px; top: 405px; position: absolute" src="hasilakhir.png" />
+  
+  <img style="width: 210px; height: 210px; left: 21.35px; top: 36px; position: absolute; border-radius: 15px" src="logo.png" />
+  
+  <!-- Tombol Keluar -->
+  <div style="width: 64px; height: 64px; left: 73px; top: 1090px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
+  <div class="menu-item" style="width: 40px; height: 25px; left: 164px; top: 1109px;">
+    <a href="loginadminkepsek.html">EXIT</a>
+  </div>
+  <img style="width: 48px; height: 48px; left: 81px; top: 1098px; position: absolute" src="exit.png" />
+  
+  <div class="divider" style="width: 197px; height: 0px; left: 38px; top: 1068px;"></div>
+
+  <!-- Notifikasi Pop-up -->
+  <div class="notification" id="notification">Berhasil di unggah</div>
+</div>
+
+<script>
+  // Menambahkan event listener untuk tombol unggah
+  document.getElementById('uploadButton').addEventListener('click', function() {
+    showNotification();
+  });
+
+  // Fungsi untuk menampilkan notifikasi
+  function showNotification() {
+    var notification = document.getElementById('notification');
+    notification.style.display = 'block';
+    
+    // Sembunyikan notifikasi setelah 3 detik
+    setTimeout(function() {
+      notification.style.display = 'none';
+    }, 3000);
+  }
+
+  // Tampilkan notifikasi saat halaman dimuat (opsional)
+  // window.onload = function() {
+  //   showNotification();
+  // };
+</script>
+</body>
+</html>

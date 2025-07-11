@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Data - SMAN 1 Singaparna</title>
+  <link rel="stylesheet" href="input.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+      <img src="logo.png" alt="Logo SMAN 1 Singaparna" />
+    </div>
+      <ul class="nav">
+        <li><i class="icon">👤</i> <a href="dashboard.html">Dashboard</a></li>
+        <li class="active"><i class="icon">📝</i> Input Data</li>
+        <li><i class="icon">📄</i><a href="hasil.html"></a> Hasil Kelulusan</li>
+        <li><i class="icon">🛒</i> Koperasi</li>
+      </ul>
+      <div class="exit">
+        <hr>  
+        <button class="exit-btn">
+            <i class="icon">🔒</i> 
+            <a href="login.html">EXIT</a>  <!-- Perubahan di sini -->
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h2>Input Data</h2>
+      <p>Selamat Datang, Calon Siswa</p>
+      <h3>Input Data Diri</h3>
+
+      <form class="form-container" action="data.php" method="POST">
+        <!-- Kolom 1 -->
+        <div class="form-section">
+          <label>Nama Lengkap <input type="text" name="nama_lengkap"></label>
+          <label>Tempat Lahir <input type="text" name="tempat_lahir"></label>
+          <label>Tanggal Lahir <input type="date" name="tanggal_lahir"></label>
+          <label>Jenis Kelamin 
+              <select name="jenis_kelamin">
+                  <option value="Laki-Laki">Laki-Laki</option>
+                  <option value="Perempuan">Perempuan</option>
+              </select>
+          </label>
+          <label>Agama <input type="text" name="agama"></label>
+          <label>NISN <input type="text" name="NISN"></label>
+          <label>Alamat <textarea name="alamat"></textarea></label>
+          <label>No HP / WA <input type="text" name="no_hp"></label>
+          <label>Asal Sekolah <input type="text" name="asal_sekolah"></label>
+          <label>Alamat Sekolah <textarea name="alamat_sekolah"></textarea></label>
+          <label>Nilai Raport</label>
+          <input type="text" placeholder="Sem 1" name="nilai_sem1">
+          <input type="text" placeholder="Sem 2" name="nilai_sem2">
+          <input type="text" placeholder="Sem 3" name="nilai_sem3">
+          <input type="text" placeholder="Sem 4" name="nilai_sem4">
+          <input type="text" placeholder="Sem 5" name="nilai_sem5">
+        </div>
+
+        <!-- Kolom 2 -->
+        <div class="form-section">
+          <label>Jarak Sekolah (Meter) <input name="nama_lengkap" type="text"></label>
+          <label>Prestasi 1 - Bidang <input name="tempat_lahir" type="text"></label>
+          <label>Peringkat Kejuaraan <input name="tanggal_lahir" type="text"></label>
+          <label>Tingkat Wilayah <input name="jenis_kelamin" type="text"></label>
+          <label>Prestasi 2 - Bidang <input name="agama" type="text"></label>
+          <label>Peringkat Kejuaraan <input name="NISN" type="text"></label>
+          <label>Tingkat Wilayah <input name="alamat" type="text"></label>
+          <label>Prestasi 3 - Bidang <input name="no_hp" type="text"></label>
+          <label>Peringkat Kejuaraan <input name="asal_sekolah" type="text"></label>
+          <label>Tingkat Wilayah <input name="alamat_sekolah" type="text"></label>
+          <label>Nama Lengkap Ayah <input name="jarak_sekolah" type="text"></label>
+          <label>No HP / WA <input name="prestasi1_bidang" type="text"></label>
+          <label>Pekerjaan Ayah <input name="prestasi1_peringkat" type="text"></label>
+        </div>
+
+        <!-- Kolom 3 -->
+        <div class="form-section">
+          <label>Nama Lengkap Ibu <input name="prestasi1_tingkat" type="text"></label>
+          <label>No HP / WA <input name="prestasi2_bidang" type="text"></label>
+          <label>Pekerjaan Ibu <input name="prestasi2_peringkat" type="text"></label>
+          <label>Alamat <textarea></textarea></label>
+          <label>Nama Lengkap Wali <input name="prestasi2_tingkat" type="text"></label>
+          <label>No HP / WA <input name="prestasi3_bidang" type="text"></label>
+          <label>Pekerjaan Wali <input name="prestasi3_peringkat" type="text"></label>
+          <label>Hubungan <input name="prestasi3_tingkat" type="text"></label>
+          <label>Alamat <textarea></textarea></label>
+
+      
+
+        </div>
+
+        
+      </form>
+
+      <div class="next-button">
+        <button type="submit"><a href="unggah.html">Next</a></button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

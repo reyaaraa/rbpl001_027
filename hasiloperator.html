@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Akhir Seleksi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inika', serif;
+    }
+
+    body {
+      background-color: #f0f5ea;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      width: 1780px;
+      height: 1197px;
+      background: rgba(220, 229, 204, 0.88);
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      width: 272px;
+      height: 100%;
+      background: #B4D1AC;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 25px;
+      padding: 36px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 210px;
+      height: 210px;
+      border-radius: 15px;
+      margin-bottom: 60px;
+      object-fit: cover;
+    }
+
+    .menu-item {
+      display: flex;
+      align-items: center;
+      width: 212px;
+      height: 55px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .menu-item img {
+      width: 40px;
+      height: 40px;
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    .menu-item.data img {
+      width: 60px;
+      height: 60px;
+      margin-left: 10px;
+    }
+
+    .menu-item a {
+      color: black;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .menu-highlight {
+      background: #DCE5CC;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+      border-radius: 100px;
+    }
+
+    .divider {
+      position: absolute;
+      outline: 3px #4E6D41 solid;
+      outline-offset: -1.50px;
+    }
+
+    /* Main Content Styles */
+    .main-content {
+      position: absolute;
+      left: 272px;
+      width: calc(100% - 272px);
+      height: 100%;
+      padding: 44px 40px;
+      overflow-y: auto;
+    }
+
+    .header-section {
+      color: #4E6D41;
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .welcome-message {
+      color: #686868;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 40px;
+    }
+
+    /* Student Grid Styles */
+    .student-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding-bottom: 30px;
+    }
+
+    .student-card {
+      width: 392px;
+      height: 185px;
+      background: #B4D1AC;
+      border-radius: 25px;
+      padding: 15px;
+      display: flex;
+      position: relative;
+      box-shadow: 6px 6px 10px 5px rgba(86.64, 130.93, 45.20, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .card-icon {
+      width: 104px;
+      height: 97px;
+      background: #4C7640;
+      border-radius: 25px;
+      margin-right: 20px;
+      position: relative;
+    }
+
+    .student-photo {
+      width: 88px;
+      height: 88px;
+      position: absolute;
+      top: 5px;
+      left: 8px;
+      object-fit: cover;
+    }
+
+    .student-info {
+      flex: 1;
+    }
+
+    .student-name {
+      color: #686868;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .student-id {
+      color: #686868;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      width: 105px;
+      height: 36px;
+      background: #90AA89;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FEFEFE;
+      font-size: 11px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn.learn-more:hover {
+      background: #7a9972;
+    }
+
+    .btn.status {
+      background: #D25B5B;
+    }
+
+    .btn.status:hover {
+      background: #b84a4a;
+    }
+
+    /* Upload Button */
+    .upload-btn {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+      width: 112px;
+      height: 39px;
+      background: #90AA89;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FEFEFE;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Animation for disappearing card */
+    @keyframes fadeOut {
+      from { opacity: 1; transform: scale(1); }
+      to { opacity: 0; transform: scale(0.9); height: 0; margin: 0; padding: 0; }
+    }
+
+    .card-removing {
+      animation: fadeOut 0.3s forwards;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <img class="logo" src="logo.png" alt="School Logo">
+      
+      <div class="menu-item">
+        <img src="akun.png" alt="Dashboard Icon">
+        <a href="akunoperator.html">Dashboard</a>
+      </div>
+      
+      <div class="menu-item">
+        <img src="akun.png" alt="Dashboard Icon">
+        <a href="akunpendaftar.html">Pendaftar</a>
+      </div>
+
+      <div class="menu-item menu-highlight data">
+        <img src="data.png" alt="Results Icon">
+        <a href="hasiloperator.html">Hasil Seleksi</a>
+      </div>
+      
+      <div class="menu-item">
+        <img src="hasilakhir.png" alt="Final Results Icon">
+        <a href="hasilakhiroperator.html">Hasil Akhir</a>
+      </div>
+
+      <div class="menu-item">
+        <img src="hasilakhir.png" alt="Final Results Icon">
+        <a href="koperasioperator.html">Koperasi</a>
+      </div>
+
+      <!-- Tombol Keluar -->
+      <div class="menu-item" style="width: 40px; height: 25px; left: 164px; top: 1109px;">
+        <a href="loginadminkepsek.html">EXIT</a>
+      </div>
+      <img style="width: 48px; height: 48px; left: 81px; top: 1098px; position: absolute" src="exit.png"/>
+      <div class="divider" style="width: 197px; height: 0px; left: 38px; top: 1068px;"></div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <div class="header-section">Hasil Seleksi</div>
+      <div class="welcome-message">Halo operator</div>
+      
+      <div class="student-grid">
+        <!-- Student Card 1 -->
+        <div class="student-card" id="student1">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student1')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card 2 -->
+        <div class="student-card" id="student2">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student2')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card 3 -->
+        <div class="student-card" id="student3">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student3')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card 4 -->
+        <div class="student-card" id="student4">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student4')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card 5 -->
+        <div class="student-card" id="student5">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student5')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card 6 -->
+        <div class="student-card" id="student6">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student6')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card 7 -->
+        <div class="student-card" id="student7">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student7')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card 8 -->
+        <div class="student-card" id="student8">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student8')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Card 9 -->
+        <div class="student-card" id="student9">
+          <div class="card-icon">
+            <img class="student-photo" src="foto.png" alt="Student Photo">
+          </div>
+          <div class="student-info">
+            <p class="student-name">NABILA MARWAH</p>
+            <p class="student-id">0085741</p>
+            <div class="action-buttons">
+              <a href="detail_siswa.html" class="btn learn-more">LEARN MORE →</a>
+              <div class="btn status" onclick="removeCard('student9')">Verifikasi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script>
+    function removeCard(cardId) {
+      const card = document.getElementById(cardId);
+      
+      // Tambahkan class untuk animasi
+      card.classList.add('card-removing');
+      
+      // Hapus card setelah animasi selesai
+      setTimeout(() => {
+        card.remove();
+        
+        // Atur ulang grid setelah penghapusan
+        reorganizeGrid();
+      }, 300);
+    }
+    
+    function reorganizeGrid() {
+      const grid = document.querySelector('.student-grid');
+      const remainingCards = Array.from(grid.children);
+      
+      // Hapus semua card dari grid
+      while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+      }
+      
+      // Tambahkan kembali card yang tersisa
+      remainingCards.forEach(card => {
+        if (!card.classList.contains('card-removing')) {
+          grid.appendChild(card);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

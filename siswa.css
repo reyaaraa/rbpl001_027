@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+}
+
+.container {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #b7d7b3;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.logo-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.nav {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.nav li {
+  padding: 10px 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.nav li:hover {
+  background-color: #a4caa4;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+.exit {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.exit-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  background-color: #e5f2d8;
+  padding: 0;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.banner {
+  background-image: url('sman.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner h1 {
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+  padding: 10px 20px;
+  font-size: 32px;
+}
+
+.dashboard {
+  padding: 20px;
+}
+
+.dashboard h2 {
+  margin: 10px 0 5px;
+  color: #1e5c32;
+}
+
+.card {
+  background-color: #b7d7b3;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+}
+
+.card-progress {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 20px 0;
+}
+
+.card-progress ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-progress li {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.card-progress li span {
+  color: #1e5c32;
+  margin-right: 5px;
+}
+
+.card-progress small {
+  font-weight: normal;
+  color: #555;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.info {
+  width: 250px;
+  text-align: center;
+}
+
+.warning {
+  color: red;
+  font-weight: bold;
+}

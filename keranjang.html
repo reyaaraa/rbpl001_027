@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keranjang - SMAN 1 Singaparna</title>
+  <link rel="stylesheet" href="keranjang.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+      <img src="logo.png" alt="Logo SMAN 1 Singaparna" />
+    </div>  
+      <ul class="nav">
+        <li><i class="icon">👤</i> <a href="dashboard.html">Dasshboard</a></li>
+        <li><i class="icon">🗂️</i> <a href="input.html">Input Data</a></li>
+        <li><i class="icon">📄</i> <a href="hasil.html">Hasil Kelulusan</a></li>
+        <li class="active"><i class="icon">🛒</i> Koperasi</li>
+      </ul>
+      <div class="exit">
+        <hr />
+        <button class="exit-btn"><i class="icon">🔒</i> EXIT</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <h2>Keranjang</h2>
+        <p>Ayo Checkout Keranjangmu!</p>
+        <div class="cart-icon">🛒</div>
+      </div>
+
+      <div class="cart-grid">
+        <!-- Item -->
+        <div class="cart-item">
+          <input type="checkbox" />
+          <img src="baju.png" alt="Baju Sekolah" />
+          <div class="info">
+            <p>BAJU SEKOLAH</p>
+            <span>Rp. 95.000</span>
+          </div>
+        </div>
+        <div class="cart-item">
+          <input type="checkbox" />
+          <img src="sabuk.png" alt="sabuk" />
+          <div class="info">
+            <p>Sabuk</p>
+            <span>Rp. 15.000</span>
+          </div>
+        </div>
+        <!-- Tambah item lainnya sesuai kebutuhan -->
+      </div>
+
+      <div class="subtotal-section">
+        <span>Subtotal:</span>
+        <strong>Rp. XXX.XXX</strong>
+        <button class="pay-btn"><a href="pembayaran.html">PAY</a></button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

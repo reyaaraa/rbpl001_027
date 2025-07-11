@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pembayaran - SMAN 1 Singaparna</title>
+  <link rel="stylesheet" href="pembayaran.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+      <img src="logo.png" alt="Logo SMAN 1 Singaparna" />
+    </div> 
+      <ul class="nav">
+        <li><i class="icon">👤</i> <a href="akunsiswa.php">Dashboard</a></li>
+        <li><i class="icon">🗂️</i> <a href="input.html">Input Data</a></li>
+        <li><i class="icon">📄</i><a href="hasil.html">Hasil Kelulusan</a></li>
+        <li class="active"><i class="icon">🛒</i> Koperasi</li>
+      </ul>
+      <div class="exit">
+        <hr />
+        <button class="exit-btn"><i class="icon">🔒</i> EXIT</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <h2>Pembayaran</h2>
+        <p>Silakan Melakukan Pembayaran</p>
+        <div class="cart-icon">🛒</div>
+      </div>
+
+      <div class="payment-content">
+        <!-- Selected Items -->
+        <div class="items-list">
+          <div class="item">
+            <img src="baju.png" alt="Baju Sekolah">
+            <div class="info">
+              <p>Baju Seekolah</p>
+              <span>Rp. 95.000</span>
+            </div>
+          </div>
+          <div class="item">
+            <img src="sabuk.png" alt="Sabuk">
+            <div class="info">
+              <p>Sabuk</p>
+              <span>Rp. 15.000</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Info -->
+        <div class="payment-info">
+          <p>Subtotal: <span>Rp. XXX.XXX</span></p>
+          <p>Total: <strong>Rp. XXX.XXX</strong></p>
+
+          <h4>Pembayaran Melalui</h4>
+          <div class="payment-methods">
+            <label><input type="radio" name="bank" /> <img src="qris.png" alt="QRIS"></label>
+            <label><input type="radio" name="bank" /> <img src="bri.png" alt="BRI"></label>
+            <label><input type="radio" name="bank" /> <img src="bni.png" alt="BNI"></label>
+          </div>
+
+          <button class="pay-btn">PAY</button>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

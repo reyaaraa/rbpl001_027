@@ -1,0 +1,265 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e5f0d9;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4e8152;
+    padding: 10px 30px;
+  }
+  
+  .logo img {
+    height: 80px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: #68a072;
+    border-radius: 5px;
+  }
+  
+  nav a.active, nav a:hover {
+    background-color: #3f6242;
+  }
+  
+  .hero {
+    background: url('sman.jpg') no-repeat center center/cover;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+  }
+  
+  .welcome {
+    background-color: #f1f4e4;
+    padding: 40px;
+    text-align: left;
+  }
+  
+  .welcome h2 {
+    font-size: 24px;
+  }
+  
+  .welcome h2 span {
+    color: #4e8152;
+    font-weight: bold;
+  }
+  
+  .welcome button {
+    background-color: #8cae8c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px;
+    background-color: #dbe7c9;
+  }
+  
+  .feature {
+    width: 200px;
+    text-align: center;
+    margin: 20px;
+    background-color: #f1f4e4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature img {
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.left-panel {
+    background-color: #e0ecd4;
+    width: 50%;
+    padding: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.left-panel h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.icon img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.form-box {
+    background: linear-gradient(to right, #d8f0c1, #b4d9b0);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 350px;
+}
+
+.form-box label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 20px;
+    border: none;
+    background-color: #d2e5cc;
+    color: #333;
+}
+
+.signup-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: #8cbf75;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-text {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.login-text a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.right-panel {
+    width: 50%;
+    background: linear-gradient(to bottom, #306d45, #0e3d25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration img {
+    max-width: 80%;
+    height: auto;
+}
+
+.logo {
+  width: 80px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #f4e300;
+}
+
+main {
+  background-color: #e5f2d8;
+  padding: 30px;
+  text-align: center;
+}
+
+main h2 {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+main .highlight {
+  color: #4e835a;
+  font-weight: bold;
+}
+
+.card {
+  background: #b7d7b3;
+  margin: 20px auto;
+  padding: 20px 30px;
+  width: fit-content;
+  display: flex;
+  gap: 50px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+}
+
+.more-button {
+  background-color: #a1bba3;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 3px;
+}

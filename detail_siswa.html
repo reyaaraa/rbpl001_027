@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Siswa - Sistem Seleksi Penerimaan Siswa Baru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: #4C7640;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 1.5rem;
+        }
+        
+        .logo-text {
+            font-weight: 600;
+        }
+        
+        .user-info h2 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .user-info p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .page-title {
+            background: #3a5e30;
+            color: white;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+        }
+        
+        .content {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+        
+        .left-column {
+            flex: 2;
+        }
+        
+        .right-column {
+            flex: 1;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .section-title {
+            color: #2E7D32;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #C8E6C9;
+        }
+        
+        .photo-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .photo-placeholder {
+            width: 120px;
+            height: 160px;
+            background: #e0e0e0;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #bdbdbd;
+            font-weight: 500;
+            color: #666;
+        }
+        
+        .photo-info {
+            font-size: 0.8rem;
+            color: #616161;
+        }
+        
+        .timestamp {
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: #616161;
+            text-align: center;
+        }
+        
+        .biodata-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .info-item {
+            margin-bottom: 12px;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #424242;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            background: white;
+            padding: 8px 10px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            min-height: 38px;
+        }
+        
+        .documents-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        .document-card {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        
+        .doc-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: #4C7640;
+        }
+        
+        .doc-title {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .doc-status {
+            font-size: 0.75rem;
+            color: #4C7640;
+            font-weight: bold;
+        }
+        
+        .exit-container {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .exit-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .exit-button:hover {
+            background: #388E3C;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #e8f5e9;
+            color: #2E7D32;
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+            
+            .biodata-grid,
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon">📚</div>
+                <div class="logo-text">SISTEM SELEKSI PPDB</div>
+            </div>
+            <div class="user-info">
+                <h2>Admin Sekolah</h2>
+                <p>Kepala Sekolah: XXXX</p>
+            </div>
+        </header>
+        
+        <div class="page-title">
+            <h1>BIODATA SISWA CALON PESERTA DIDIK</h1>
+        </div>
+        
+        <div class="content">
+            <div class="left-column">
+                <div class="section">
+                    <div class="photo-section">
+                        <div class="photo-placeholder">
+                            FOTO SISWA 3X4
+                        </div>
+                        <div class="photo-info">
+                            Foto terakhir diunggah: -
+                        </div>
+                    </div>
+                    
+                    <div class="timestamp">
+                        <strong>Tanggal Daftar:</strong> - | -
+                    </div>
+                    
+                    <h2 class="section-title">BIODATA SISWA</h2>
+                    
+                    <div class="biodata-grid">
+                        <div class="info-item">
+                            <div class="info-label">ID CALON</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">NAMA LENGKAP</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">TEMPAT LAHIR</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">TANGGAL LAHIR</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">JENIS KELAMIN</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">AGAMA</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">NISN</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">ALAMAT</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">NO HP</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">ASAL SEKOLAH</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">ALAMAT SEKOLAH</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">JARAK SEKOLAH (km)</div>
+                            <div class="info-value">-</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">PRESTASI</h2>
+                    <div class="info-item">
+                        <div class="info-label">-</div>
+                        <div class="info-value">-</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">-</div>
+                        <div class="info-value">-</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section">
+                    <h2 class="section-title">DOKUMEN PENDUKUNG</h2>
+                    <div class="documents-grid">
+                        <div class="document-card">
+                            <div class="doc-icon">📄</div>
+                            <div class="doc-title">Rekap Nilai</div>
+                            <div class="doc-status">-</div>
+                        </div>
+                        <div class="document-card">
+                            <div class="doc-icon">🆔</div>
+                            <div class="doc-title">Akta Kelahiran</div>
+                            <div class="doc-status">-</div>
+                        </div>
+                        <div class="document-card">
+                            <div class="doc-icon">🎓</div>
+                            <div class="doc-title">Ijazah/Surat Lulus</div>
+                            <div class="doc-status">-</div>
+                        </div>
+                        <div class="document-card">
+                            <div class="doc-icon">🏠</div>
+                            <div class="doc-title">Kartu Keluarga</div>
+                            <div class="doc-status">-</div>
+                        </div>
+                        <div class="document-card">
+                            <div class="doc-icon">📝</div>
+                            <div class="doc-title">Surat Pernyataan</div>
+                            <div class="doc-status">-</div>
+                        </div>
+                        <div class="document-card">
+                            <div class="doc-icon">🔢</div>
+                            <div class="doc-title">Scan NISN</div>
+                            <div class="doc-status">-</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">ORANG TUA/WALI</h2>
+                    <div class="biodata-grid">
+                        <div class="info-item">
+                            <div class="info-label">NAMA LENGKAP</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">STATUS</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">NO HP</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">PEKERJAAN</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">HUBUNGAN</div>
+                            <div class="info-value">-</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">ALAMAT</div>
+                            <div class="info-value">-</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h2 class="section-title">HASIL KELULUSAN</h2>
+                    <div class="info-item">
+                        <div class="info-label">STATUS</div>
+                        <div class="info-value">Belum diumumkan</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">TANGGAL PENGUMUMAN</div>
+                        <div class="info-value">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exit-container">
+            <a href="hasilkepsek.html" class="exit-button">
+                <span>←</span> Kembali
+            </a>
+        </div>
+
+        <footer>
+            <p>Sistem Penerimaan Peserta Didik Baru | SMAN 1 SINGPARNA</p>
+        </footer>
+    </div>
+</body>
+</html>

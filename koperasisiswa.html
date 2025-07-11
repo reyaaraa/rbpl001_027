@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Koperasi Siswa - SMAN 1 Singaparna</title>
+  <link rel="stylesheet" href="kopsis.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+       <div class="logo">
+      <img src="logo.png" alt="Logo SMAN 1 Singaparna" />
+    </div> 
+      <ul class="nav">
+        <li><i class="icon">👤</i><a href="dashboard.html">Dashboard</a></li>
+        <li><i class="icon">🗂️</i><a href="input.html">Input Data</a></li>
+        <li><i class="icon">📄</i><a href="hasil.html">Hasil Kelulusan</a></li>
+        <li class="active"><i class="icon">🛒</i> Koperasi</li>
+      </ul>
+      <div class="exit">
+        <hr />
+        <button class="exit-btn"><i class="icon">🔒</i> <a href="loginadminkepsek.html">EXIT</a></button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="header">
+        <div>
+          <h2>Koperasi</h2>
+          <p>Selamat Datang, Calon Siswa</p>
+        </div>
+        <div class="search-cart">
+          <input type="text" placeholder="Cari produk..." />
+          <i class="icon">🔍</i>
+          <i class="icon"> <a href="keranjang.html">🛒</a></i>
+        </div>
+      </div>
+
+      <div class="category">
+        <button class="active">Semua</button>
+      </div>
+
+      <div class="product-grid">
+        <!-- Produk ditampilkan di sini -->
+        <div class="product-card">
+          <img src="baju.png" alt="Baju Sekolah" />
+          <h4>BAJU SEKOLAH</h4>
+          <p>Rp. 95.000</p>
+        </div>
+        <div class="product-card">
+          <img src="lightstick.jpg" alt="Lightstick" />
+          <h4>Lightstick</h4>
+          <p>Rp. 300.000</p>
+        </div>
+        <div class="product-card">
+          <img src="sabuk.png" alt="Sabuk" />
+          <h4>sabuk</h4>
+          <p>Rp. 15.000</p>
+        </div>
+        <div class="product-card">
+          <img src="alat.png" alt="Alat Tulis" />
+          <h4>Alat Tulis</h4>
+          <p>Rp. 20.000</p>
+        </div>
+        <!-- Duplikat sesuai kebutuhan -->
+      </div>
+    </main>
+  </div>
+</body>
+</html>

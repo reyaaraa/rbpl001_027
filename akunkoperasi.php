@@ -1,0 +1,251 @@
+<?php
+session_start();
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'koperasi') {
+    header("Location: loginadminkepsek.html");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figma Export</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div style="width: 1780px; height: 1105px; position: relative; background: rgba(220, 229, 204, 0.88); overflow: hidden; border-radius: 25px">
+  <div style="width: 276px; height: 78px; left: 295px; top: 76px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #4E6D41; font-size: 35px; font-family: Inika; font-weight: 700; word-wrap: break-word">Koperasi</div>
+  <div style="width: 276px; height: 78px; left: 289px; top: 474px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #4E6D41; font-size: 35px; font-family: Inika; font-weight: 700; word-wrap: break-word">Informasi</div>
+  <div style="width: 269px; height: 1102px; left: 0px; top: 0px; position: absolute; background: #B4D1AC; border-radius: 25px"></div>
+  <div style="width: 212px; height: 55px; left: 33px; top: 209px; position: absolute; background: #DCE5CC; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) inset; border-radius: 100px"></div>
+  <div style="width: 104px; height: 25px; left: 109px; top: 224px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 15px; font-family: Inika; font-weight: 700; word-wrap: break-word">Dashboard</div>
+  <div style="width: 64px; height: 64px; left: 69px; top: 1007px; position: absolute; background: #D9D9D9; border-radius: 9999px"></div>
+  <img style="width: 61.56px; height: 57px; left: 28px; top: 287px; position: absolute" src="data.png" />
+  <div style="width: 131px; height: 25px; left: 109px; top: 303px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 15px; font-family: Inika; font-weight: 700; word-wrap: break-word">Data Barang dan Harga</div>
+  <div style="width: 40px; height: 25px; left: 160px; top: 1026px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 15px; font-family: Inika; font-weight: 700; word-wrap: break-word">EXIT</div>
+  <div style="width: 124px; height: 25px; left: 109px; top: 379px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 15px; font-family: Inika; font-weight: 700; word-wrap: break-word">Restok Barang</div>
+  <img style="width: 60px; height: 60px; left: 29px; top: 207px; position: absolute" src="akun.png" />
+  <img style="width: 60px; height: 55px; left: 27px; top: 364px; position: absolute; border-radius: 25px" src="restock.png" />
+  <div style="width: 124px; height: 25px; left: 109px; top: 461px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: black; font-size: 15px; font-family: Inika; font-weight: 700; word-wrap: break-word">Daftar Pembelian</div>
+  <img style="width: 54px; height: 54px; left: 33px; top: 447px; position: absolute" src="keranjang.png" />
+  <img style="width: 48px; height: 48px; left: 77px; top: 1015px; position: absolute" src="exit.png" />
+  <div style="width: 848px; height: 289px; left: 319px; top: 152px; position: absolute; background: linear-gradient(89deg, #B4D1AC 0%, #A6ACA4 100%); box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.51); border-radius: 25px"></div>
+  <div style="width: 507px; height: 510px; left: 1217px; top: 510px; position: absolute; background: #B4D1AC; box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.51); border-radius: 25px"></div>
+  <div style="width: 276px; height: 78px; left: 1238px; top: 510px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #4E6D41; font-size: 35px; font-family: Inika; font-weight: 700; word-wrap: break-word" >Penjualan </div>
+  <img style="width: 200px; height: 180px; left: 21.35px; top: 15px; position: absolute; border-radius: 15px" src="logo.png" />
+  <div style="width: 197px; height: 0px; left: 34px; top: 985px; position: absolute; outline: 3px #4E6D41 solid; outline-offset: -1.50px"></div>
+  <div style="width: 375px; height: 290px; left: 1295px; top: 159px; position: absolute; background: #B4D1AC; box-shadow: 15px 15px 4px rgba(0, 0, 0, 0.47); overflow: hidden; border-radius: 25px; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+    <div style="width: 269px; height: 25px; background: #82AC70; border-radius: 20px; justify-content: center; align-items: center; display: inline-flex">
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">S</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">M</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">T</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">W</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">T</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">F</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">S</div>
+      </div>
+    </div>
+    <div style="width: 269px; height: 25px; background: #82AC70; border-radius: 20px; justify-content: center; align-items: center; display: inline-flex">
+      <div data-property-1="Empty" style="width: 24px; height: 24px; padding: 8px; background: #82AC70"></div>
+      <div data-property-1="Empty" style="width: 24px; height: 24px; padding: 8px; background: #82AC70"></div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">1</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">2</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">3</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">4</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #121212; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">5</div>
+      </div>
+    </div>
+    <div style="width: 269px; height: 25px; background: #82AC70; border-radius: 20px; justify-content: center; align-items: center; display: inline-flex">
+      <div style="width: 24px; height: 24px; padding: 8px; background: #121212; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #82AC70; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">6</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">7</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">8</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">9</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">10</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">11</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #121212; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">12</div>
+      </div>
+    </div>
+    <div style="width: 269px; height: 25px; background: #82AC70; border-radius: 20px; justify-content: center; align-items: center; display: inline-flex">
+      <div style="width: 24px; height: 24px; padding: 8px; background: #121212; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #82AC70; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">13</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">14</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">15</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #34721A; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">16</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">17</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">18</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #121212; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">19</div>
+      </div>
+    </div>
+    <div style="width: 269px; height: 25px; background: #82AC70; border-radius: 20px; justify-content: center; align-items: center; display: inline-flex">
+      <div style="width: 24px; height: 24px; padding: 8px; background: #121212; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #82AC70; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">20</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">21</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">22</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">23</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">24</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">25</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #121212; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">26</div>
+      </div>
+    </div>
+    <div style="width: 269px; height: 25px; background: #82AC70; border-radius: 20px; justify-content: center; align-items: center; display: inline-flex">
+      <div style="width: 24px; height: 24px; padding: 8px; background: #121212; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: #82AC70; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">27</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">28</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">29</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">30</div>
+      </div>
+      <div style="width: 24px; height: 24px; padding: 8px; background: #82AC70; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div style="color: black; font-size: 12px; font-family: Inter; font-weight: 400; word-wrap: break-word">31</div>
+      </div>
+      <div data-property-1="Empty" style="width: 24px; height: 24px; padding: 8px; background: #82AC70"></div>
+      <div data-property-1="Empty" style="width: 24px; height: 24px; padding: 8px; background: #82AC70"></div>
+    </div>
+  </div>
+  <img style="width: 242px; height: 285px; left: 361px; top: 154px; position: absolute" src="koprasi.png" />
+  <div style="width: 431px; height: 129px; left: 696px; top: 237px; position: absolute; background: rgba(217, 217, 217, 0.28); border-radius: 15px"></div>
+  <div style="width: 297px; height: 19px; left: 729px; top: 275px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #3E6436; font-size: 24px; font-family: Inika; font-weight: 700; word-wrap: break-word">Halo, SELAMAT DATANG </div>
+  <div style="width: 139px; height: 12px; left: 729px; top: 302px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: rgba(61.54, 61.54, 61.54, 0.59); font-size: 14px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pak Chanyeol</div>
+  <img style="width: 59px; height: 59px; left: 612.64px; top: 258px; position: absolute; transform: rotate(41deg); transform-origin: top left" src="uang.png" />
+  <img style="width: 82px; height: 83px; left: 361.13px; top: 172px; position: absolute; transform: rotate(24deg); transform-origin: top left" src="dikoprasi.png" />
+  <img style="width: 91px; height: 72px; left: 1075px; top: 328px; position: absolute" src="belannja.png" />
+  <div style="width: 267px; height: 124px; left: 335px; top: 552px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 351px; top: 566px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 582px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 599px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 616px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 633px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 371px; top: 575px; position: absolute" src="foto.png" />
+  <div style="width: 267px; height: 124px; left: 335px; top: 699px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 351px; top: 713px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 729px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 746px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 763px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 780px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 371px; top: 722px; position: absolute" src="foto.png" />
+  <div style="width: 267px; height: 124px; left: 913px; top: 701px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 929px; top: 715px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 1053px; top: 731px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 1053px; top: 748px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 1053px; top: 765px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 1053px; top: 782px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 949px; top: 724px; position: absolute" src="foto.png" />
+  <div style="width: 267px; height: 124px; left: 628px; top: 699px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 644px; top: 713px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 768px; top: 729px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 768px; top: 746px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 768px; top: 763px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 768px; top: 780px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 664px; top: 722px; position: absolute" src="foto.png" />
+  <div style="width: 267px; height: 124px; left: 914px; top: 554px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 930px; top: 568px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 1054px; top: 584px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 1054px; top: 601px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 1054px; top: 618px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 1054px; top: 635px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 950px; top: 577px; position: absolute" src="foto.png" />
+  <div style="width: 267px; height: 124px; left: 629px; top: 552px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 645px; top: 566px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 769px; top: 582px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 769px; top: 599px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 769px; top: 616px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 769px; top: 633px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 665px; top: 575px; position: absolute" src="foto.png" />
+  <div style="width: 267px; height: 124px; left: 335px; top: 846px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 351px; top: 860px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 876px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 893px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 910px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 475px; top: 927px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 371px; top: 869px; position: absolute" src="foto.png" />
+  <div style="width: 267px; height: 124px; left: 913px; top: 848px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 929px; top: 862px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 1053px; top: 878px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 1053px; top: 895px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 1053px; top: 912px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 1053px; top: 929px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 949px; top: 871px; position: absolute" src="foto.png" />
+  <div style="width: 267px; height: 124px; left: 628px; top: 846px; position: absolute; background: #B4D1AC; box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25); border-radius: 25px"></div>
+  <div style="width: 104px; height: 97px; left: 644px; top: 860px; position: absolute; background: #4C7640; border-radius: 25px"></div>
+  <div style="width: 99px; height: 33px; left: 768px; top: 876px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">NABILA MARWAH</div>
+  <div style="width: 99px; height: 33px; left: 768px; top: 893px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Baju Sekolah</div>
+  <div style="width: 99px; height: 33px; left: 768px; top: 910px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Lightstick</div>
+  <div style="width: 99px; height: 33px; left: 768px; top: 927px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: #686868; font-size: 10px; font-family: Inika; font-weight: 700; word-wrap: break-word">Pena</div>
+  <img style="width: 65px; height: 81px; left: 664px; top: 869px; position: absolute" src="foto.png" />
+  <div style="width: 105px; height: 36px; left: 1075px; top: 1005px; position: absolute; background: #90AA89; border-radius: 5px"></div>
+  <div style="width: 90px; height: 14px; left: 1083px; top: 1016px; position: absolute; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #FEFEFE; font-size: 11px; font-family: Inika; font-weight: 700; word-wrap: break-word"> <a href="databarang.html">Learn More →</a></div>
+  <img style="width: 154px; height: 154px; left: 1097.59px; top: 58px; position: absolute; transform: rotate(22deg); transform-origin: top left" src="exo.png" />
+  <img style="width: 153px; height: 62px; left: 1413px; top: 110px; position: absolute; box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.25)" src="april.png" />
+</div>
+</body>
+</html>
